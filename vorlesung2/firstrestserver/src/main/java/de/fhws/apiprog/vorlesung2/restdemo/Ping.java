@@ -10,20 +10,12 @@ import javax.ws.rs.core.Response;
 public class Ping {
 
 	@GET
-	public String ping( @QueryParam("text")String text) {
-		if( text == null || text.isEmpty() )
-		{
-			return "OK";
-		}
-		else
-		{
-			return text.toUpperCase();
-		}
+	public String ping(@QueryParam("text") String text) {
+		return "OK";
 	}
-	
+
 	@POST
-	public Response post( String text )
-	{
+	public Response post(String text) {
 		return Response.ok(text.toLowerCase()).build();
 	}
 
